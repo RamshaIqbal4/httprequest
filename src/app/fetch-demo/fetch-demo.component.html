@@ -1,0 +1,21 @@
+<div class="container">
+    <h3>Add New Post</h3>
+    <div class="form-group">
+        <input [(ngModel)]="newPost.title" placeholder="Title" class="form-control" />
+        <textarea [(ngModel)]="newPost.body" placeholder="Body" class="form-control"></textarea>
+        <button (click)="addPost()" class="btn btn-add">Add Post</button>
+    </div>
+    <h2>Posts</h2>
+    <ul class="post-list">
+        <li *ngFor="let post of posts" class="post-item">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.body }}</p>
+            <div class="button-group">
+                <button (click)="updatePost(post.id)" class="btn btn-update">Update</button>
+                <button (click)="deletePost(post.id)" class="btn btn-delete">Delete</button>
+            </div>
+        </li>
+    </ul>
+
+
+</div>
